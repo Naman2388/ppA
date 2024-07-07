@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    /* /FIRST/ */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .logo .name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+    }
+    .nav-links {
+      display: flex;
+      gap: 80px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #22b601;
+    }
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .auth-buttons .login {
+      text-decoration: none;
+      color:  #22b601;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+    .auth-buttons .login:hover {
+      color: #0056b3;
+    }
+    .auth-buttons .signup {
+      color: #fff;
+      text-decoration: none;
+      background-color: #22b601;
+      padding: 10px 20px;
+      border: 1px solid #22b601;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .auth-buttons .signup:hover {
+      background-color: #fff;
+      color: #22b601;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      background-color: #fff;
+    }
+    .hero-text {
+      max-width: 50%;
+    }
+    .hero-text h1 {
+      font-size: 2.5em;
+      color: #333;
+    }
+    .hero-text h1 .highlight {
+      color: #28a745;
+    }
+    .hero-text p {
+      font-size: 1.2em;
+      color: #666;
+    }
+    .hero-text .cta {
+      margin-top: 20px;
+    }
+    .hero-text .cta a {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .hero-text .cta a:hover {
+      background-color: #218838;
+    }
+    .hero-image {
+      max-width: 40%;
+    }
+    .hero-image img {
+      width: 100%;
+    }
+/* /SECOND/ */
+   .clients {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .clients h2 {
+      font-size: 2em;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .clients p {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .clients-logos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .clients-logos img {
+      height: 90px;
+    }
+    .main-section {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+    .main-section h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .main-section p {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .feature-box {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-align: center;
+      max-width: 300px;
+      width: 100%;
+    }
+    .feature-box img {
+      height: 130px;
+      margin-bottom: 15px;
+    }
+    .feature-box h3 {
+      font-size: 1.5em;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .feature-box p {
+      font-size: 1em;
+      color: #666;
+    }
+    /* thir-part 1 */
+    .main-section{
+        width: 100%;
+        height: 70%;
+    }
+    .main-section .image img{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 250px;
+        width: 290px;
+        height: 290px;
+    }
+    .leftpart{
+        position: absolute;
+        top:210%;
+        left:30%;
+        margin-right: 150px;
+    }
+    .leftpart h1{
+        margin-left: 130px;
+    }
+    .leftpart p{
+        font-size: 17px;
+        margin-left: 130px;
+    }
+    .leftpart button{
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        margin-right: 500px;
+    }
+    /* third-part2 */
+    .main-section2{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .main-section2 .left h1{
+        position: relative;
+        top:70px;
+        left: 20%;
+       
+    }
+    .main-section2 .left p{
+        position: absolute;
+        top:140px;
+        left: 20%;
+    
+    }
+    .main-section2 .left h1 span{
+        color: #10b981;
+    }
+    .right-part1{
+        display: flex;
+        align-items: center;
+        margin-left: 55%;
+        position: relative;
+        bottom: 39px;
+        gap: 50px;
+    }
+    .right-part2{
+        display: flex;
+        align-items: center;
+        margin-left: 55%;
+        position: relative;
+        bottom: 38px;
+        gap: 50px;
+    }
+    /* thir-part 3 */
+    .main-section3{
+        width: 100%;
+        height: 70%;
+    }
+    .main-section3 .image img{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 250px;
+        width: 290px;
+        height: 290px;
+    }
+    .right{
+        position: absolute;
+        top:293%;
+        left:36%;
+        margin-right: 150px;
+    }
+    .right h1{
+        margin-left: 130px;
+    }
+    .right p{
+        font-size: 17px;
+        margin-left: 130px;
+    }
+    .main-section3 button{
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        margin-left: 680px;
+    }
+    
+
+/* /THIRD/ */
+    .ul-testimonial-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+        @media (min-width: 768px) {
+            .ul-testimonial-container {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        .ul-testimonial-image {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9fafb;
+        }
+        .ul-testimonial-image img {
+            width: 10cm;
+            height: 10cm;
+        }
+        .ul-testimonial-content {
+            flex: 2;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .ul-testimonial-content p {
+            color: #6b7280;
+            margin: 0 0 1rem;
+            padding-right: 3cm;
+            text-align: justify;
+        }
+        .ul-testimonial-content h3 {
+            color: #10b981;
+            margin: 0 0 0.5rem;
+        }
+        .ul-testimonial-content h4 {
+            color: #9ca3af;
+            margin: 0 0 1rem;
+        }
+        .ul-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .ul-logos img {
+            width: 120px;
+            height: 80px;
+        }
+        .ul-cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-top: 1px solid #e5e7eb;
+            flex-basis: 100%;
+            text-align: center;
+        }
+        .ul-cta a {
+            color: #10b981;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .ul-cta a svg {
+            margin-left: 5px;
+        }
+
+/* /FORTH/ */
+    .blog-header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .blog-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .blog-header p {
+            color: #6b7280;
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .blog-card img {
+            width: 100%;
+            height: auto;
+        }
+        .blog-card-content {
+            padding: 20px;
+        }
+        .blog-card-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .blog-card-content a {
+            color: green;
+            text-decoration: none;
+            font-weight: bold;
+        }
+/* /FIFTH/ */
+        .ui-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .ui-content {
+            flex: 1;
+        }
+        .ui-cta-section {
+            background-color: #ffffff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .ui-cta-section h1 {
+            margin: 6cm;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 2rem;
+        }
+        .ui-cta-section button {
+            background-color: #38a169;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .ui-footer {
+            background-color: #2d3748;
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: left;
+        }
+        .ui-footer .ui-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .ui-footer .ui-container > div {
+            flex: 1;
+            margin: 1rem;
+        }
+        .ui-footer h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .ui-footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .ui-footer ul li {
+            margin-bottom: 0.5rem;
+        }
+        .ui-footer ul li a {
+            color: #a0aec0;
+            text-decoration: none;
+        }
+        .ui-footer .ui-social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .ui-footer .ui-social-icons a {
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+        .ui-footer .ui-subscribe {
+            display: flex;
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .ui-footer .ui-subscribe input {
+            padding: 0.75rem;
+            color: #ffffff;
+            border: none;
+            border-radius: 0.375rem;
+            outline: none;
+        }
+        .ui-footer .ui-subscribe button {
+            background-color: #38a169;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+  <!--FIRST-->
+
+<header class="header">
+  <div class="logo">
+    <img src="Screenshot (606).png" alt="Logo">
+    <span class="name">Nexcent</span>
+  </div>
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Service</a>
+    <a href="#">Feature</a>
+    <a href="#">Product</a>
+    <a href="#">Testimonial</a>
+    <a href="#">FAQ</a>
+  </nav>
+  <div class="auth-buttons">
+    <a href="#" class="login">Login</a>
+    <a href="#" class="signup">Sign up</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Lessons and insights <br><span class="highlight">from 8 years</span></h1>
+    <p>Where to grow your business as a photographer: site or social media?</p>
+    <div class="cta">
+      <a href="#">Register</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="aa.jpg" alt="Hero Image">
+  </div>
+</section>
+
+
+
+<!--sECOND-->
+
+
+<section class="clients">
+  <h2>Our Clients</h2>
+  <p>We have been working with some Fortune 500+ clients</p>
+  <div class="clients-logos">
+    <img src="Screenshot (610).png" alt="Client Logo 1">
+    <img src="Screenshot (611).png" alt="Client Logo 2">
+    <img src="Screenshot (612).png" alt="Client Logo 3">
+    <img src="Screenshot (613).png" alt="Client Logo 4">
+    <img src="Screenshot (614).png" alt="Client Logo 5">
+    <img src="Screenshot (615).png" alt="Client Logo 6">
+    <img src="Screenshot (616).png" alt="Client Logo 7">
+  </div>
+</section>
+
+<section class="main-section">
+  <h1>Manage your entire community in a single system</h1>
+  <p>Who is Nextcent suitable for?</p>
+  <div class="features">
+    <div class="feature-box">
+      <img src="Screenshot (617).png" alt="Icon 1">
+      <h3>Membership Organisations</h3>
+      <p>Our membership management software provides full automation of membership renewals and payments</p>
+    </div>
+    <div class="feature-box">
+      <img src="Screenshot (618).png" alt="Icon 2">
+      <h3>National Associations</h3>
+      <p>Our membership management software provides full automation of membership renewals and payments</p>
+    </div>
+    <div class="feature-box">
+      <img src="Screenshot (619).png" alt="Icon 3">
+      <h3>Clubs And Groups</h3>
+      <p>Our membership management software provides full automation of membership renewals and payments</p>
+    </div>
+  </div>
+</section>
+
+<!-- third part 1 -->
+ <div class="main-section">
+    <div class="image">
+        <img src="Screenshot (621).png" alt="">
+    </div>
+    <div class="leftpart">
+    <h1>The unseen of spending three
+        years at pixelgrade
+    </h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id repudiandae a 
+    inventore consequatur nihil impedit eius sed aliquam maxime ex molestias ducimus, quas harum
+    perferendis earum, officiis autem dolor aspernatur consequuntur odio error pariatur
+    .Quisque vulputate odio neque, eget efficiture libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
+    orem ipsum, dolor sit amet consectetur adipisicing elit. Id repudiandae a inventore consequatur.</p>
+     <button>Learn More</button>
+    </div>
+ </div>
+
+ <!-- third part-2 -->
+  <div class="main-section2">
+    <div class="left">
+    <h1>Helping a local<br>
+        <span>business reinvent itself</span></h1>
+    <p>We reached here with our hard work and dedication</p>
+    </div>
+    <div class="right-part1">
+        <div class="logo">
+            <img src="IMG-20240707-WA0064.jpg" alt="">
+            <h2>2,245,341</h2>
+            <h6>Members</h6>
+        </div>
+        <div class="logo">
+            <img src="IMG-20240707-WA0064.jpg" alt="">
+            <h2>46,328</h2>
+            <h6>CLubs</h6>
+        </div>
+    </div>
+    <div class="right-part2">
+        <div class="logo">
+            <img src="IMG-20240707-WA0063.jpg" alt="">
+            <h2>828,867</h2>
+            <h6>Event Booklogs</h6>
+        </div>
+        <div class="logo">
+            <img src="IMG-20240707-WA0064.jpg" alt="">
+            <h2>1,926,436</h2>
+            <h6>Payments</h6>
+        </div>
+    </div>
+    </div>
+  </div>
+<!-- third part 3 -->
+<div class="main-section3">
+    <div class="image">
+        <img src="Screenshot (626).png" alt="">
+    </div>
+    <div class="right">
+    <h1>How to design your site footer like we did
+    </h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id repudiandae a 
+    inventore consequatur nihil impedit eius sed aliquam maxime ex molestias ducimus, quas harum
+    perferendis earum, officiis autem dolor aspernatur consequuntur odio error pariatur
+    .Quisque vulputate odio neque, eget efficiture libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
+    orem ipsum, dolor sit amet consectetur adipisicing elit. Id repudiandae a inventore consequatur.</p>
+    </div>
+    <button>Learn More</button>
+ </div>
+
+
+
+<!--THIRD-->
+
+
+
+
+
+
+<div class="ul-testimonial-container">
+  <div class="ul-testimonial-image">
+      <img src="Screenshot (625).png" alt="Tesla logo">
+  </div>
+  <div class="ul-testimonial-content">
+      <p>Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.</p>
+      <h3>Tim Smith</h3>
+      <h4>British Dragon Boat Racing Association</h4>
+      <div class="ul-logos">
+          <img src="Screenshot (610).png" alt="Logo 1">
+          <img src="Screenshot (611).png" alt="Logo 2">
+          <img src="Screenshot (612).png" alt="Logo 3">
+          <img src="Screenshot (613).png" alt="Logo 4">
+          <img src="Screenshot (614).png" alt="Logo 5">
+          <img src="Screenshot (615).png" alt="Logo 6">
+          <div class="ul-cta">
+              <a href="#">Meet all customers &rarr;</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!--FORTH-->
+
+
+<header class="blog-header">
+  <h1>Caring is the new marketing</h1>
+  <p>The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lots more.</p>
+</header>
+<main class="blog-container">
+  <div class="blog-grid">
+      <div class="blog-card">
+          <img src="WhatsApp Image 2024-07-06 at 19.02.40_a30bfce3.jpg" alt="Creating Streamlined Safeguarding Processes with OneRen">
+          <div class="blog-card-content">
+              <h3>Creating Streamlined Safeguarding Processes with OneRen</h3>
+              <a href="#">Readmore &rarr;</a>
+          </div>
+      </div>
+      <div class="blog-card">
+          <img src="WhatsApp Image 2024-07-06 at 19.02.40_fdef87a6.jpg" alt="What are your safeguarding responsibilities and how can you manage them?">
+          <div class="blog-card-content">
+              <h3>What are your safeguarding responsibilities and how can you manage them?</h3>
+              <a href="#">Readmore &rarr;</a>
+          </div>
+      </div>
+      <div class="blog-card">
+          <img src="WhatsApp Image 2024-07-06 at 19.02.41_787953e9.jpg" alt="Revamping the Membership Model with Triathlon Australia">
+          <div class="blog-card-content">
+              <h3>Revamping the Membership Model with Triathlon Australia</h3>
+              <a href="#">Readmore &rarr;</a>
+          </div>
+      </div>
+  </div>
+</main>
+
+
+
+<!--FIFTH-->
+
+<div class="ui-content">
+  <!-- Call to Action Section -->
+  <section class="ui-cta-section">
+      <div class="ui-container">
+          <h1>Pellentesque suscipit fringilla libero eu.</h1>
+          <button>Get a Demo →</button>
+      </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="ui-footer">
+  <div class="ui-container">
+      <div>
+          <h3>Nexcent</h3>
+          <p>Copyright © 2020 Nexcent ltd.<br>All rights reserved</p>
+          <div class="ui-social-icons">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-dribbble"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+      </div>
+      <div>
+          <h3>Company</h3>
+          <ul>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Testimonials</a></li>
+          </ul>
+      </div>
+      <div>
+          <h3>Support</h3>
+          <ul>
+              <li><a href="#">Help center</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Legal</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Status</a></li>
+          </ul>
+      </div>
+      <div>
+          <h3>Stay up to date</h3>
+          <div class="ui-subscribe">
+              <input type="email" placeholder="Your email address" style="color: #ffffff;">
+              <button><i class="fas fa-paper-plane"></i></button>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!-- FontAwesome for social icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  
+</body>
+</html>
